@@ -39,9 +39,9 @@ const fallbackImages = {
 };
 
 // Supabase URL and bucket configurations
-const SUPABASE_URL = "https://elhhfkmuivqbgrbennmo.supabase.co";
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "";
 const HERB_IMAGES_BUCKET = "herb.images";
-const HERO_BACKGROUND_IMAGE = `${SUPABASE_URL}/storage/v1/object/public/${HERB_IMAGES_BUCKET}/ashwagandha.jpg`;
+const HERO_BACKGROUND_IMAGE = SUPABASE_URL ? `${SUPABASE_URL}/storage/v1/object/public/${HERB_IMAGES_BUCKET}/ashwagandha.jpg` : "/herbs/ashwagandha.jpg";
 
 export default function HeroSection() {
   const [currentHerbIndex, setCurrentHerbIndex] = useState(0);

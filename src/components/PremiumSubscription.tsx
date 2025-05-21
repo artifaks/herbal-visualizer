@@ -9,8 +9,8 @@ import { BookOpen } from "lucide-react";
 import { FREE_EBOOK_ID } from "./SubscriptionBanner";
 import { grantFreeEbook } from "@/utils/subscriptionUtils";
 
-// Initialize Stripe - using the publishable key
-const stripePromise = loadStripe("pk_live_51R2DTxLvWTChRVZPjvfohBHTziKSaX9ou8vOy35Ul5RVYMKVKe6aiGT6p3hkolrei5XxRCRBoSUJxIBxSzKsul2U00OCKwEz2t");
+// Initialize Stripe - using the publishable key from environment variables
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || "");
 
 // Subscription price ID
 const SUBSCRIPTION_PRICE_ID = "price_1R2Nv5LvWTChRVZPNM1J9qr8"; 
