@@ -1,7 +1,6 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  environment = { NODE_VERSION = "18" }
 
 # Handle client-side routing
 [[redirects]]
@@ -60,3 +59,7 @@
 [build.environment]
   NODE_VERSION = "18"
   NODE_ENV = "production"
+  # Add your actual values during Netlify site setup
+  VITE_SUPABASE_URL = "REPLACE_WITH_YOUR_SUPABASE_URL"
+  VITE_SUPABASE_ANON_KEY = "REPLACE_WITH_YOUR_SUPABASE_ANON_KEY"
+  VITE_STRIPE_PUBLIC_KEY = "REPLACE_WITH_YOUR_STRIPE_PUBLIC_KEY"
